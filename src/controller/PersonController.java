@@ -27,14 +27,9 @@ public class PersonController extends HttpServlet {
 		String url = requestURI.substring(ctxPath.length());
 
 		PersonDAO dao = PersonDAO.getInstance();
-
+		System.out.println(url);
 		try {
-
-			if(url.contentEquals("/inputform.person")) {
-
-				response.sendRedirect("addform.jsp");
-
-			}else if(url.contentEquals("/inputProc.person")){
+			if(url.contentEquals("/input.person")){
 				String name = request.getParameter("name");
 				String contact = request.getParameter("contact");
 				PersonDTO dto = new PersonDTO(name, contact);
@@ -42,16 +37,16 @@ public class PersonController extends HttpServlet {
 				request.setAttribute("result", result);
 				RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
 				rd.forward(request, response);
-			} else if(url.contentEquals("/deleteProc.person")) {
-				dao.delete(request.getParameter("name"));
-				response.sendRedirect("index.jsp");
+			} else if(url.contentEquals("/deletePersonProc.person")) {
+				dao.delete(request.getParameter("deleteId"));
+				response.sendRedirect(ctxPath+"member/PersonDelete.jsp");
 			} else if(url.contentEquals("/ModifyProc.person")) {
 				PersonDTO temp = new PersonDTO(Integer.parseInt(request.getParameter("modiId")),request.getParameter("modiName"), request.getParameter("modiContact"));
 				dao.update(temp);
 				response.sendRedirect("index.jsp");
-			} else if(url.contentEquals("/listProc.person")) {
+			} else if(url.contentEquals("/PersonList.person")) {
 				request.setAttribute("list",dao.selectAll());
-				request.getRequestDispatcher("").forward(request, response);
+				request.getRequestDispatcher("personList.jsp").forward(request, response);
 			}
 		} catch(Exception e) {
 			e.printStackTrace();

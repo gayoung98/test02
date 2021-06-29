@@ -20,7 +20,6 @@
 				alert("수정할 메세지를 확인해주세요.");
 				return false;
 			}
-			
 		});
 	});
 </script>
@@ -54,7 +53,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td colspan=4 align="center"><a href="index.jsp"><button>Back</button></a>
+			<td colspan=4 align="center"><a href="${pageContext.request.contextPath}/Index.jsp"><button>Back</button></a>
 		</tr>
 	</table>
 </body>

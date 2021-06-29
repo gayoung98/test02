@@ -30,7 +30,7 @@
         <tr>
            <td colspan=4 align="center">
             <input type="submit" value="Delete">
-            <a href="${pageContext.request.contextPath}Index.jsp"><button type="button">Back</button></a>
+            <a href="${pageContext.request.contextPath}/Index.jsp"><button type="button">Back</button></a>
         </tr>
     </form>    
     </table>

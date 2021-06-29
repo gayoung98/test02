@@ -59,20 +59,20 @@
     <script>
         $(function () {
             $("#toInput").on("click", function () {
-				location.href="${pageContext.request.contextPath}/member/PersonInput.person";
+				location.href="${pageContext.request.contextPath}/member/PersonInput.jsp";
             });
 
             $("#toOutput").on("click", function () {
-				location.href="${pageContext.request.contextPath}/memeber/PersonList.person";
+				location.href="${pageContext.request.contextPath}/PersonList.person";
 
             });
             
             $("#toDelete").on("click", function () {
-				location.href="${pageContext.request.contextPath}/member/PersonDelete.person";
+				location.href="${pageContext.request.contextPath}/member/PersonDelete.jsp";
 
             });
             $("#toModify").on("click", function () {
-				location.href="${pageContext.request.contextPath}/member/PersonModify.person";
+				location.href="${pageContext.request.contextPath}/member/PersonModify.jsp";
 
 
             });
