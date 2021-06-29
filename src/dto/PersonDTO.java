@@ -16,6 +16,12 @@ public class PersonDTO {
 		this.contact = contact;
 	}
 	
+	public PersonDTO(String name, String contact) {
+		super();
+		this.name = name;
+		this.contact = contact;
+	}
+	
 	public int getId() {
 		return id;
 	}
